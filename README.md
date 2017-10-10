@@ -64,7 +64,7 @@ model will be displayed in, additionally may impose restraints upon what kind of
 within it. Rrome ships with a variety of pre-built types for use however made-for-purpose types are
 entirely compatable with Rrome.
 
-#### Pre-build types:
+## Pre-build types:
 
 |Type|Description|
 |--|--|
@@ -74,9 +74,10 @@ entirely compatable with Rrome.
 |FSELECT|Foreign selector|
 |FLIST|List of foreign objects|
 
+#### TEXT/DATE
+Text and Date types both simply construct components for text input or date input
 
 ##### FSELECT
-
 ```
 meta-type: {
    id: String - Model id to select from
