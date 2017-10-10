@@ -1,1 +1,1 @@
-# rrome
+![Rrome Logo](/logo.png)
