@@ -12,12 +12,11 @@ and change the information that it's linked to. Rrome forms are defined with JSO
 must have the following structure:
 ```
 {
-  id: String
-  name: String
-  model: []
+  id: String,
+  name: String,
+  model: [[]],
   display_keys: [String]
 }
-
 ```
 
 #### 'id' - STRING
@@ -31,6 +30,38 @@ A 2d array which stores much of the data contained within a rrome Model in the f
 of 'models', which themselves are JSON objects.
 
 #### 'display_keys' - Array
-An array of keys, as per the 'id', used for the displaying of stored data
+An array of keys, as per the 'id', used for the displaying of stored data.
+
 
 ## Rrome models
+Models are the internal data types stored within the Rrome forms and contain much of the 
+information that informs both what data is displayed and the manner by which it is.
+These models are defined using the following JSON object structure:
+```
+{
+  label: String,
+  id: String,
+  type: ModelType,
+  meta-type: JSON/Array
+}
+```
+
+#### 'label' - String
+The label of your model is functionally the same as the 'name' of the form,
+a human-readable thing that you use for display and reference purposes.
+
+#### 'id' - String
+Again, much as with the form, the 'id' is used for server-side reference and identification
+of the model in question.
+
+#### 'meta-type' - JSON/Array
+Based on the meta-type of the model the meta-type will define some extra configuration details
+for passing down or for the direct display/collection of data.
+
+#### 'type' - ModelType
+The 'type' field of a Rrome model is the key for the kind of component that the given data of the
+model will be displayed in, additionally may impose restraints upon what kind of data may be stored
+within it. Rrome ships with a variety of pre-built types for use however these are entirely customizable 
+components and new ones may be made fit for purpose if the need be.
+
+#### Pre-build types:
