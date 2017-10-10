@@ -61,7 +61,44 @@ for passing down or for the direct display/collection of data.
 #### 'type' - ModelType
 The 'type' field of a Rrome model is the key for the kind of component that the given data of the
 model will be displayed in, additionally may impose restraints upon what kind of data may be stored
-within it. Rrome ships with a variety of pre-built types for use however these are entirely customizable 
-components and new ones may be made fit for purpose if the need be.
+within it. Rrome ships with a variety of pre-built types for use however made-for-purpose types are
+entirely compatable with Rrome.
 
 #### Pre-build types:
+
+|Type|Description|
+|--|--|
+|TEXT|Text input|
+|DATE|Date input|
+|LIST|List of objects|
+|FSELECT|Foreign selector|
+|FLIST|List of foreign objects|
+
+
+##### FSELECT
+
+```
+meta-type: {
+   id: String - Model id to select from
+   display_keys: Array - Keys to display from model
+}
+```
+
+##### LIST
+```
+meta-type: [
+   {
+      type: ModelType,
+      label: String 
+   }
+]
+```
+
+##### FLIST
+```
+meta-type: {
+   id: String - Model id to select from
+   list_display: Keys to display in list
+   display_keys: Keys to display in selector
+}
+```
